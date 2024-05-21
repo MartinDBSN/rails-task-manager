@@ -1,0 +1,15 @@
+<div class="col-6 mx-auto">
+  <h1>Edit task</h1>
+   <%= form_with model: @task do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+  <br>
+  <%= f.label :completed %>
+  <%= f.check_box :completed %>
+  <br>
+  <%= f.submit %>
+  <% end %>
+</div>

@@ -1,0 +1,15 @@
+
+<div class="col-6 mx-auto">
+  <h1>Tasks</h1>
+  <ul>
+  <% @tasks.each do |task| %>
+    <li class="list-group-item"><input class="mr-1" type="checkbox" name="task" id="checked">
+      <%= link_to task.title, task_path(task) %>
+      <%= link_to delete_task_path(task.id),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+      <i class="ml-2 fa-solid fa-trash"></i>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+<%= link_to "Add a new task", new_task_path%>
+</div>
